@@ -1,20 +1,17 @@
-#!/bin/bash
-# script that displays numbers from 1 to 100
-
-# Iterate through numbers from 1 to 100
-for ((i=1; i<=20; i++))
+#!/usr/bin/env bash
+# Displays FizzBuzz when the number is a multiple of 3 and 5 fizz for 3 buzz 5
+for ((n=1;n<=100;n++))
 do
-	# Check if the number is a multiple of both 3 and 5
-	if (( i % 3 == 0 )) && (( i % 5 == 0 )); then
-		echo "FizzBuzz"
-		# Check if the number is multiple of 3
-	elif (( i % 3 == 0 )); then
-		echo "Fizz"
-		# Check if the number is a multiple of 5
-	elif (( i % 5 == 0 )); then
-		echo "Buzz"
-		# If none of the above conditions are met, display the number itself
-	else
-		echo "$i"
-	fi
+    if ((n % 15 == 0))
+    then
+        echo "FizzBuzz"
+    elif ((n % 3 == 0))
+    then
+        echo "Fizz"
+    elif ((n % 5 == 0))
+    then
+        echo "Buzz"
+    else
+        echo "$n"
+    fi
 done
