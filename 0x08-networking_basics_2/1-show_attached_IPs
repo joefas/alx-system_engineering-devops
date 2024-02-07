@@ -1,11 +1,4 @@
 #!/usr/bin/env bash
-# Displays all active IPv4 addresses on the machine.
+# Displays all active IPv4 addresses on the machine it is executed on
 
-# Checks if ip command is available
-if ! command -v ip &> /dev/null; then
-	echo "Error: ip command not found. This script requires the ip command to be installed ." >&2
-	exit 1
-fi
-
-# Display all active IPv4 addresses
-ip -4 addr show | grep -oP '(?<=inet\s)\d+(\.\d+){3}'
+ifconfig | grep -Eo "inet (addr:)?([0-9]*\.){3}[0-9]*" | cut -b 11-
