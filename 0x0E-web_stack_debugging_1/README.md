@@ -1,0 +1,1 @@
+port numbers are part of the addressing information used to identify the senders and receivers of messages. They are associated with TCP/IP network connections and might be described as an add-on to the IP address
